@@ -1,0 +1,89 @@
+
+{"activity": "poll",
+    "instructors": ["JunyeHuang"],
+    "results_filename": 'answers/error_analysis.results',
+    "items": [
+         {"id": "1", 
+          "question":  '''
+    <h4>
+    The image below shows the calibration matrix for two qubits. What kind of noise caused this?
+    <br />
+    <br />
+    Remember that a short decay time means more of the noise can be expected to have happened. 
+    <br />
+    Also note that in Qiskit qubit ordering is <samp>q1q0</samp>,
+    e.g. <img src="http://latex.codecogs.com/svg.latex?\\vert01\\rangle" border="0"/> 
+    means <samp>q1</samp> is <img src="http://latex.codecogs.com/svg.latex?\\vert0\\rangle" border="0"/> 
+    and <samp>q0</samp> is <img src="http://latex.codecogs.com/svg.latex?\\vert1\\rangle" border="0"/>.
+    <br />
+    <img src="questions/error_analysis_images/calib.png"> 
+    </h4>
+          ''',
+          "type": "multiple choice",
+          "options": [
+           'Qubits in state <img src="http://latex.codecogs.com/svg.latex?\\vert1\\rangle" border="0"/> decay down to <img src="http://latex.codecogs.com/svg.latex?\\vert0\\rangle" border="0"/> before measurement. The decay times for both qubits are equal.',
+           'Qubits in state <img src="http://latex.codecogs.com/svg.latex?\\vert0\\rangle" border="0"/> decay down to <img src="http://latex.codecogs.com/svg.latex?\\vert1\\rangle" border="0"/> before measurement. The decay time for <samp>q0</samp> is shorter than that for <samp>q1</samp>.',
+           'Qubits in state <img src="http://latex.codecogs.com/svg.latex?\\vert1\\rangle" border="0"/> decay down to <img src="http://latex.codecogs.com/svg.latex?\\vert0\\rangle" border="0"/> before measurement. The decay time for <samp>q0</samp> is longer than that for <samp>q1</samp>.',
+           'Qubits in state <img src="http://latex.codecogs.com/svg.latex?\\vert0\\rangle" border="0"/> decay down to <img src="http://latex.codecogs.com/svg.latex?\\vert1\\rangle" border="0"/> before measurement. The decay time for <samp>q0</samp> is longer than that for <samp>q1</samp>.',
+           'Qubits in state <img src="http://latex.codecogs.com/svg.latex?\\vert1\\rangle" border="0"/> decay down to <img src="http://latex.codecogs.com/svg.latex?\\vert0\\rangle" border="0"/> before measurement. The decay time for <samp>q0</samp> is shorter than that for <samp>q1</samp>.',
+       ]}, 
+         {"id": "2", 
+          "question":  '''
+   <h4>The noise that caused the calibration matrix in the previous question depends on an array of <img src="http://latex.codecogs.com/svg.latex?T_1" border="0"/> times, where the element <samp>T1[j]</samp> is the decay time of the qubit <samp>qr[j]</samp> during measurement.
+   
+   Once this has been defined, the noise is simulated with
+   <pre>
+
+T2 = [1,1] # arbitrarily chosen T2 times
+time_measure = 10 # arbitrarily chosen measurement time
+noise_thermal = NoiseModel()
+for j in range(2):
+    noise_thermal.add_quantum_error(thermal_relaxation_error(T1[j], T2[j], time_measure) , "measure", [j])
+
+    </pre>
+   
+   Which <img src="http://latex.codecogs.com/svg.latex?T_1" border="0"/> times create a calibration matrix closest to the one shown above?</h4>
+          ''',
+          "type": "multiple choice",
+          "options": [
+           '<samp>[100,30]</samp>',
+           '<samp>[50,3]</samp>',
+           '<samp>[3,10]</samp>',
+           '<samp>[30,100]</samp>',
+           '<samp>[1,1000]</samp>',
+          ]},
+         
+          {"id": "3", 
+          "question":  '''
+   <h4>
+   To calculate Quantum Volume, we test whether a certain condition is satisfied for random circuits 
+   applied to successivly larger sets of qubits. These can be made out of any qubits you have available. 
+   For example, the tutorial on quantum volume uses
+   <pre>
+           qubit_lists = [[0,1,3],[0,1,3,5],[0,1,3,5,7],[0,1,3,5,7,10]]
+   </pre>
+   Let's extend the 2-qubit noise model from the previous question to 5 qubits.
+   <pre>
+
+n = 5
+T1 =  [ j*20 for j in range(1,n+1) ]
+T2 = [ 2*t1 for t1 in T1] # T2 times as large as they can be
+time_measure = 10 # arbitrarily chosen measurement time
+noise_thermal = NoiseModel()
+for j in range(n):
+    noise_thermal.add_quantum_error( thermal_relaxation_error(T1[j], T2[j], time_measure) , "measure", [j])
+   </pre>
+   
+   Which of the following would be most sensible for calculating quantum volume, given the decay times on each qubit?</h4>
+          ''',
+          "type": "multiple choice",
+          "options": [
+           '<samp>[[0,2,4],[0,2,3,4],[0,1,2,3,4]]</samp>',
+           '<samp>[[0,1,2],[0,1,2,3],[0,1,2,3,4]]</samp>',
+           '<samp>[[0,2,4],[0,1,2,4],[0,1,2,3,4]]</samp>',
+           '<samp>[[2,3,4],[1,2,3,4],[0,1,2,3,4]]</samp>',
+           'None of the above',
+          ]},    
+       ]
+   }
+   

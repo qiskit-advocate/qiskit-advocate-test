@@ -1,0 +1,45 @@
+
+{"activity": "poll",
+    "instructors": ["JunyeHuang"],
+    "results_filename": 'answers/real_devices.results',
+    "items": [
+        {
+            "id": "1", 
+            "question":  
+            """
+            <h4>
+            How do you find the least busy device to run the following circuit from the previous section? 
+            <img align="middle" src="questions/advanced_circuits_images/merged.png" width=400px>
+            </h4>
+     
+            """,       
+            "type": "multiple choice",
+            "options": [
+             '<pre>least_busy(provider.backends())</pre>',
+             '<pre>least_busy(provider.backends(filters=lambda x: x.configuration().n_qubits >= 5))</pre>',
+             '''<pre>provider.backends(filters=lambda x: x.configuration().n_qubits >= 5
+and not x.configuration().simulator
+and x.status().operational==True)</pre>''',
+             'Both 1 & 3 are correct',
+             "None of the above"    
+        ]},
+        {
+            "id": "2", 
+            "question":  
+            """
+            <h4>
+            How do you retrieve the last run job from a backend?
+            </h4>
+     
+            """,       
+            "type": "multiple choice",
+            "options": [
+             '<pre>backend.jobs()[0]</pre>',
+             '<pre>backend.jobs()[-1]</pre>',
+             '<pre>backend.retrieve_job()[0]</pre>',
+             '<pre>backend.retrieve_job()[-1]</pre>',
+             "None of the above"    
+        ]},
+   ]
+   }
+   

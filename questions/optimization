@@ -1,0 +1,76 @@
+
+{"activity": "poll",
+    "instructors": ["JunyeHuang"],
+    "results_filename": 'answers/optimization.results',
+    "items": [
+        {
+            "id": "1", 
+            "question":  
+            """
+            <h4>
+            Which of the following statement is incorrect for this <samp>QuadraticProgram</samp>?
+            <br />
+            <br />
+            <pre>
+mod = QuadraticProgram()
+mod.binary_var('x')
+mod.binary_var('y')
+mod.minimize(constant = 3, linear=[1,-2], quadratic={('x', 'y'): 2})
+            </pre>
+            </h4>
+     
+            """,       
+            "type": "multiple choice",
+            "options": [
+                'It has two variables',
+                'The objective is to minimise x - 2 y + 2 x^2 + 2 y^2 + 3',
+                'It has no constraints',
+                'It is a Quadratic Unconstrained Binary Optimization (QUBO) problem', 
+                "None of the above"    
+        ]},
+        {
+            "id": "2", 
+            "question":  
+            """
+            <h4>
+            What kinds of minimum eigen solvers can be used for the <samp>MinimumEigenOptimizer</samp>?
+            <br />
+            <br />
+            <pre>
+problem = QuadraticProgram()
+# specify problem here
+# specify minimum eigen solver to be used
+mes = <span style="color:red;">(*what can be here?*)</span>
+optimizer = MinimumEigenOptimizer(mes)
+result = optimizer.solve(problem)
+            </pre>
+            </h4>
+     
+            """,       
+            "type": "multiple choice",
+            "options": [
+                '<pre>VQE(...)</pre>',
+                '<pre>QAOA(...)</pre>',
+                '<pre>NumpyMinimumEigensolver(...)</pre>',
+                'All of the above',
+                "None of the above"    
+        ]},
+        {
+            "id": "3", 
+            "question":  
+            """
+            <h4>
+            Which optimizers in Qiskit can be used to solve Quadratic Unconstrained Binary Optimization (QUBO) problems?
+            </h4>
+            """,       
+            "type": "multiple choice",
+            "options": [
+                '<pre>MinimumEigenOptimizer</pre>',
+                '<pre>GroverOptimizer</pre>',
+                '<pre>CobylaOptimizer</pre>',
+                'Both 1 & 2',
+                "All of the above"   
+        ]},
+   ]
+   }
+   

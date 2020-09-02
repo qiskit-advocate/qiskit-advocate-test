@@ -1,0 +1,105 @@
+
+{"activity": "poll",
+    "instructors": ["JunyeHuang"],
+    "results_filename": 'answers/advanced_circuits.results',
+    "items": [
+        {
+            "id": "1", 
+            "question":  
+            """
+            <h4> How do you merge the <samp>lhs</samp> and <samp>rhs</samp> circuits to form the <samp>final</samp> circuit?
+            <br/>
+            lhs: <img align="middle" src="questions/advanced_circuits_images/lhs.png" width=260px>
+            rhs: <img align="middle" src="questions/advanced_circuits_images/rhs.png" width=230px>
+            final: <img align="middle" src="questions/advanced_circuits_images/merged.png" width=350px>
+            </h4>
+     
+            """,       
+            "type": "multiple choice",
+            "options": [
+             '<pre>lhs.append(rhs)</pre>',
+             '<pre>lhs.combine(rhs)</pre>',
+             '<pre>lhs.compose(rhs)</pre>',
+             '<pre>lhs+rhs</pre>',
+             "None of the above"    
+        ]},
+        
+        {
+            "id": "2", 
+            "question":  
+            """
+            <h4> What's the depth of <samp>QuantumVolume(num_qubits=5, depth=5)</samp> circuit after decomposition into basis gates <samp>[u3,cx]<samp>?
+            </h4>
+     
+            """,       
+            "type": "multiple choice",
+            "options": [
+             '5',
+             '10',
+             '25',
+             '35',
+             "None of the above"    
+        ]},
+
+        {
+            "id": "3", 
+            "question":  
+            """
+            <h4> 
+            Which of the following gates/circuits are not currently available in the Qiskit circuit library?
+            </h4>
+            """,       
+            "type": "multiple choice",
+            "options": [
+                '<pre>HGate</pre>',
+                '<pre>NAND</pre>',
+                '<pre>QFT</pre>',
+                '<pre>QuantumVolume</pre>',
+             "None of the above"    
+        ]},
+        
+        {
+            "id": "4", 
+            "question":  
+            """
+            <h4> Which one of the following <samp>Operators</samp> is different from the rest?
+            </h4>
+     
+            """,       
+            "type": "multiple choice",
+            "options": [
+             "<pre>Operator(Pauli(label='XZ'))</pre>",
+             "<pre>Operator(Pauli(label='X')).tensor(Operator(Pauli(label='Z')))</pre>",
+             """
+<pre>qc = QuantumCircuit(2)
+qc.x(0)
+qc.z(1)
+Operator(qc)</pre>
+             """,
+             "<pre>Operator([[0, 0, 1, 0], [0, 0, 0, -1], [1, 0, 0, 0], [0, -1, 0, 0]])</pre>",
+             "None of the above"    
+        ]},
+
+        {
+          "id": "5", 
+          "question":  
+          """
+          <h4>How many gates are in the quantum circuit that results from transpiling the following quantum circuit 
+          using only the pass <samp>LookaheadSwap</samp>? Assume the following coupling map: <samp>[[0, 1], [1, 2], [2, 3], [3, 4]]</samp>
+          
+          <h4> <img align="middle" src="questions/advanced_circuits_images/tpl_circuit.png" width=250px><br/>
+   
+          </h4>
+   
+          """,       
+          "type": "multiple choice",
+          "options": [
+           "6",
+           "8",
+           "9",
+           "12",
+           "None of the above"    
+        ]},
+   ]
+   }
+   

@@ -1,0 +1,127 @@
+
+{"activity": "poll",
+    "instructors": ["JunyeHuang"],
+    "results_filename": 'answers/pulse.results',
+    "items": [
+        {
+            "id": "1", 
+            "question":  
+            """
+            <h4>
+            When do you want to use Qiskit Pulse?
+            </h4>
+     
+            """,       
+            "type": "multiple choice",
+            "options": [
+             'Performing better calibrations on qubits',
+             'Measuring coherence time T1 and T2',
+             'Getting optimized gate errors',
+             'Accessing higher energy states of transmon qubits',
+             "All of the above"    
+        ]},
+        {
+            "id": "2", 
+            "question":  
+            """
+            <h4>
+            Which kind of <samp>Channel</samp> is used for collecting measurement data?
+            </h4>
+     
+            """,       
+            "type": "multiple choice",
+            "options": [
+             '<pre>DriveChannel</pre>',
+             '<pre>MeasureChannel</pre>',
+             '<pre>AcquireChannel</pre>',
+             '<pre>ControlChannel</pre>',
+             "None of the above"    
+        ]},
+        {
+            "id": "3", 
+            "question":  
+            """
+            <h4>
+            Which kind of <samp>Pulse</samp> waveforms is used to reduce the chance of leakage to higher energy states of transmon qubits?
+            </h4>
+     
+            """,       
+            "type": "multiple choice",
+            "options": [
+             '<pre>Constant</pre>',
+             '<pre>Drag</pre>',
+             '<pre>Gaussian</pre>',
+             '<pre>GaussianSquare</pre>',
+             "None of the above"    
+        ]},
+        {
+            "id": "4", 
+            "question":  
+            '''
+            <h4>
+            What is the possible goal of the following <samp>Pulse</samp> experiment?
+            <br />
+            <br />
+            <pre>
+schedule = pulse.Schedule()
+schedule += Play(drive_pulse, drive_chan)
+schedule += measure << schedule.duration
+schedule_frequencies = [{drive_chan: freq} for freq in frequencies_Hz]
+<br />
+experiment_program = assemble(schedule,
+                            backend=backend, 
+                            meas_level=1,
+                            meas_return='avg',
+                            shots=num_shots_per_frequency,
+                            schedule_los=schedule_frequencies)
+            </pre>
+            </h4>
+            ''',       
+            "type": "multiple choice",
+            "options": [
+             'Finding the qubit frequency',
+             'Performing a Rabi experiment',
+             'Measuring T1',
+             'Measuring T2',
+             "None of the above"    
+        ]},
+        {
+            "id": "5", 
+            "question":  
+            '''
+            <h4>
+            What is the possible goal of the following <samp>Pulse</samp> experiment?
+            <br />
+            <br />
+            <pre>
+schedules = []
+for drive_amp in drive_amps:
+    pulse = pulse_lib.gaussian(duration=drive_samples, amp=drive_amp, 
+                                    sigma=drive_sigma, name=f"Drive amplitude = {drive_amp}")
+    this_schedule = pulse.Schedule(name=f"Drive amplitude = {drive_amp}")
+    this_schedule += Play(pulse, drive_chan)
+    this_schedule += measure << this_schedule.duration
+    schedules.append(this_schedule)
+
+experiment_program = assemble(schedules,
+                            backend=backend,
+                            meas_level=1,
+                            meas_return='avg',
+                            shots=num_shots_per_point,
+                            schedule_los=[{drive_chan: rough_qubit_frequency}]
+                            * num_points)
+            </pre>
+            </h4>
+     
+            ''',       
+            "type": "multiple choice",
+            "options": [
+                'Finding the qubit frequency',
+                'Performing a Rabi experiment',
+                'Measuring T1',
+                'Measuring T2',
+             "None of the above"    
+        ]},
+   ]
+   }
+   

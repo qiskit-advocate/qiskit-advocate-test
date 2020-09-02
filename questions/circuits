@@ -1,0 +1,75 @@
+
+{"activity": "poll",
+ "instructors": ["JunyeHuang"],
+ "results_filename": 'answers/circuits.results',
+ "items": [
+    {"id": "1", 
+        "question":  '<h4>What is the output of the following circuit given initial state of <img src="http://latex.codecogs.com/svg.latex?\\vert0\\rangle" border="0"/> ?<br/><br/><h4> <img align="middle" src="questions/circuits_images/hx0.png" width=300px><br/>',
+        "type": "multiple choice",
+        "options": [
+         '<img src="http://latex.codecogs.com/svg.latex?\\vert0\\rangle" border="0"/>',
+         '<img src="http://latex.codecogs.com/svg.latex?\\frac{\\vert0\\rangle+\\vert1\\rangle}{\\sqrt{2}}" border="0"/>',
+         '<img src="http://latex.codecogs.com/svg.latex?\\frac{\\vert0\\rangle-\\vert1\\rangle}{\\sqrt{2}}" border="0"/>',
+         "Both 2 & 3 are possible",
+         "None of the above",
+    ]},
+      
+    {"id": "2", 
+        "question":  '<h4>What is the result of the measurements in the following circuit assuming error-free quantum computation?<br/><br/><h4><img src="questions/circuits_images/bell.png" width=400px><br/>',
+        "type": "multiple choice",
+        "options": [
+         "50% 0 and 50% 1",
+         "50% 00 and 50% 11",
+         "100% 1",
+         "Both 1 & 2 are possible",
+         "None of the above",
+    ]},
+    {"id": "3", 
+        "question":  
+        """
+        <h4> Consider the three-qubit quantum circuit below. What are the real and imaginary components of the state vector?<br/><br/><h4> <img align="middle" src="questions/circuits_images/q1.png" width=300px><br/>
+        """,
+        "type": "multiple choice",
+        "options": [
+         '<img src="questions/circuits_images/q1_a1.png" >',
+         '<img src="questions/circuits_images/q1_a2.png" >',
+         '<img src="questions/circuits_images/q1_a3.png" >',
+         '<img src="questions/circuits_images/q1_a4.png" >',
+         "None of the above"
+    ]},
+    {
+        "id": "4", 
+        "question":  
+        """
+        <h4> Which of the following state visualization represent the same quantum state as shown in this <samp>qsphere</samp>?
+        <img align="middle" src="questions/circuits_images/qsphere.png" width=400px><br/>
+        </h4>
+ 
+        """,       
+        "type": "multiple choice",
+        "options": [
+            '<img src="questions/circuits_images/statecity.png" width=500px>', 
+            '<img src="questions/circuits_images/hinton.png" width=500px>',
+            '<img src="questions/circuits_images/paulivec.png" width=500px>',
+            '<img src="questions/circuits_images/bloch_sphere.png" width=500px>',
+            "None of the above" 
+     ]},
+     {
+        "id": "5", 
+        "question":  
+        """
+        <h4> Which one of the following gates is different from the rest?
+ 
+        </h4>
+ 
+        """,       
+        "type": "multiple choice",
+        "options": [
+            'U1Gate(pi)',
+            'U2Gate(0, pi)',
+            'U3Gate(pi/2, 0, pi)',
+            'HGate()',
+            "None of the above" 
+     ]},
+]
+}
