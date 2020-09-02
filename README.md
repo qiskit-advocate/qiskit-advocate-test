@@ -4,7 +4,7 @@ This is the repository for test questions and solutions for the [Qiskit Advocate
 
 ## Instructions
 
-If you want to take the test, download or clone the repository to your computer. Run Jupyter notebook and open the [Qiskit Advocate Test 2020.ipynb](Qiskit\ Advocate\ Test\ 2020.ipynb) file. Follow the instructions inside the notebook to take the test.
+If you want to take the test, download or clone the repository to your computer. Run Jupyter notebook and open the `Qiskit Advocate Test 2020.ipynb` file. Follow the instructions inside the notebook to take the test.
 
 Similarly, you can open the [solution notebooks](solutions) in Jupyter notebook to view the solutions. You can also view the solutions online using Jupyter nbviewer [here](https://nbviewer.jupyter.org/github/qiskit-community/qiskit-advocate-test/tree/master/solutions/).
 
