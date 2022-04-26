@@ -1,6 +1,6 @@
 # Qiskit Advocate Test
 
-**NOTE: This repo is archived. Please see [the application guide](https://github.com/qiskit-advocate/application-guide) for the most updated test requirement for the advocate application**
+**NOTE: This repo has been archived. Please see [the application guide](https://github.com/qiskit-advocate/application-guide) for the most updated test requirement for the advocate application**
 
 This is the repository for test questions and solutions for the [Qiskit Advocate program](https://qiskit.org/advocates) application in 2020.
 
